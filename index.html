@@ -1,36 +1,21 @@
 <!DOCTYPE html>
-<hmtl>
+<hmtl ng-app='minitw'>
 	<head>
 		<meta charset="utf-8">
 		<title>MiniTW</title>
 		<script src="bower_components/angular/angular.js"></script>
 		<script src="bower_components/angular-route/angular-route.js"></script>
 		<script src="app/app.js"></script>
-			<script src="app/controllers.js"></script>	
-		<!--  <script src="login-v/login-v.js"></script>
-		 <script src="main-v/main-v.js"></script> -->
+		<script src="app/controllers.js"></script>	
+		<script src="app/login/login.js"></script>
+		<script src="app/main/main.js"></script>
 	</head>
-	<body ng-app='minitw' ng-controller="UserCtrl">
+	<body>
 		<!-- <ul class="menu">
 		<li><a href="#/login-v">Login</a></li>
 		<li><a href="#/main-v">Main</a></li>
 		</ul> -->
-
-		<div >
-			Your email:
-			<input ng-model="uemail">
-		</div>
-		<div>
-			<button ng-click="login()">
-				Login
-			</button>
-
-			<div ng-if="user">{{user}}</div>
-		</div>
-		<div>
-			
-		</div>
-
+		<div ng-view></div>
 
 	</body>
 </html>

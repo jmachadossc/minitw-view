@@ -1,0 +1,16 @@
+<div>
+	<div>
+		Your email:
+		<input ng-model="uemail">
+	</div>
+	<div>
+		<button ng-click="login()" ng-disabled="!uemail || uemail.length < 5">
+			Login
+		</button>
+
+		<div ng-if="user"></div>
+	</div>
+	<div>
+		
+	</div>
+</div>
