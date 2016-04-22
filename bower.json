@@ -3,7 +3,7 @@
   "description": "blah",
   "version": "0.0.0",
   "homepage": "https://github.com/jmachadossc/minitw-view",
-  "private": False,
+  "private": true,
   "dependencies": {
     "angular": "1.4.x",
     "angular-mocks": "1.4.x",
