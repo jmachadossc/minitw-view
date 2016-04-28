@@ -1,0 +1,32 @@
+<div class='user-profile'>
+
+	<h3 class='username'>
+		{{user.name}} 
+	</h3>
+	<h4>
+		{{user.email}}
+	</h4>
+	
+
+	<p>
+		Follow someone: <input placeholder="type in another user's email" ng-model='emailToFollow'>
+		<button ng-click="follow()" ng-disabled="!emailToFollow || emailToFollow.length < 5">
+			Follow!
+		</button>
+		{{error}}
+	</p>
+
+	<ol ng-if="following">
+		<div ng-repeat='followed in following | orderBy:followed.name'>
+			<p class="content">
+				{{followed.followedEmail}} 
+				<button ng-click="unfollow(followed)" class='unfollow-button'>X</button> 
+			</p> 
+
+		</div>
+	</ol>
+
+
+
+
+</div>

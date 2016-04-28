@@ -1,4 +1,4 @@
-<div>
+<div class="login">
 	<div>
 		Your email:
 		<input ng-model="uemail">
@@ -8,9 +8,13 @@
 			Login
 		</button>
 
-		<div ng-if="user"></div>
+		<div class='error' ng-if="error">{{error}}</div>
+
 	</div>
+
+	<a href='#/register'> Not registered? </a>
 	<div>
+
 		
 	</div>
 </div>

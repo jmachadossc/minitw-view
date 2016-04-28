@@ -1,0 +1,33 @@
+.tweet-submitter{
+	color: grey;
+}
+
+
+.username{
+	color: green;
+}
+
+.user-profile{
+	background-color: white;
+}
+
+.user-profile .username{
+	color:brown;
+}
+
+.index{
+	background-color: lightblue;
+}
+
+.error{
+	color: red;
+}
+
+.login .error{
+	font-weight: bold;	
+}
+
+.register{
+	background-color: white;
+}
+
