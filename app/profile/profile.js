@@ -3,18 +3,28 @@
 angular.module('minitw')
 
 .controller('ProfileCtrl', function ($scope, $http, $location, $rootScope ) {
-	var serverurl = 'http://localhost:7000/follow';
-	var user = $rootScope.user;
-
-	$scope.getFollowing = function (){
-		$http.get(serverurl+'/following/'+user.email)
-		.success(function (response){
-			$scope.following = response;
-		});
-	}
 	if(!$rootScope.user){
 		$location.path('/login');
 	}
+
+
+	var serverurl = 'http://localhost:7000/follow';
+	
+
+
+	$scope.getFollowing = function (){
+		if($rootScope.user){
+			$http.get(serverurl+'/following/'+$rootScope.user.email)
+			.success(function (response){
+				$scope.following = response;
+			});			
+		}else{
+			$location.path('/login');
+		}
+
+	}
+	
+	$scope.getFollowing();
 
 	$scope.follow = function (){
 		var relation = {
@@ -36,17 +46,24 @@ angular.module('minitw')
 
 	}
 
-	$scope.unfollow = function (victim){
-		var newReq = {
-			method:'DELETE',
-			url:serverurl,
-			data: victim
+	$scope.unfollow = function (emailToUnfollow){
+		// var newReq = {
+		// 	method:'DELETE',
+		// 	url:serverurl,
+		// 	data: {
+		// 		followerEmail:victim.followerEmail,
+		// 		followedEmail:victim.followedEmail
+		// 	}
+		// }
+		var victim = {
+			followedEmail:emailToUnfollow,
+			followerEmail:$rootScope.user.email
 		}
-		$http(newReq)
+		$http.put(serverurl, victim)
 		.then(function (response){
 			$scope.getFollowing();
 		}, function (response){
-			console.error(response.error);
+			console.error(response.data);
 		});
 	}
 
@@ -54,5 +71,5 @@ angular.module('minitw')
 
 	};
 
-	$scope.getFollowing();	
+		
 });
