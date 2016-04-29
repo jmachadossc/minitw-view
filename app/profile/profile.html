@@ -19,8 +19,9 @@
 	<ol ng-if="following">
 		<div ng-repeat='followed in following | orderBy:followed.name'>
 			<p class="content">
-				{{followed.followedEmail}} 
 				<button ng-click="unfollow(followed.followedEmail)" class='unfollow-button'>X</button> 
+				{{followed.followedEmail}} 
+				
 			</p> 
 
 		</div>

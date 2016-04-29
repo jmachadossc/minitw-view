@@ -15,7 +15,7 @@
 
 
 	<ol ng-if="tweets">
-		<div ng-repeat='tweet in tweets | orderBy:tweets.date:true'>
+		<div ng-repeat='tweet in tweets track by $index | orderBy:tweet.date:true'>
 			<p class="content">
 				{{tweet.content}} (by: <span class="tweet-submitter"> {{tweet.submitter}}</span>)
 				<button ng-click="deleteTweet(tweet)" class='delete-tweet-button' ng-if='user.email==tweet.submitter'>X</button>

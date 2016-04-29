@@ -19,6 +19,9 @@
 	background-color: lightblue;
 }
 
+.main{
+	background-color: white;
+}
 .error{
 	color: red;
 }
