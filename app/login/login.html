@@ -1,20 +1,15 @@
 <div class="login">
-	<div>
-		Login:
-		<input ng-model="uemail" placeholder='Your email'>
-	</div>
-	<div>
+	Login:
+	<input ng-model="uemail" placeholder='Your email'>
+	<p>
 		<button ng-click="login()" ng-disabled="!uemail || uemail.length < 5">
 			Enter
 		</button>
+	</p>
+	<p class='error' ng-if="error">{{error}}</p>
 
-		<div class='error' ng-if="error">{{error}}</div>
-
-	</div>
+	</p>
 
 	<a href='#/register'> Not registered? </a>
-	<div>
-
-		
-	</div>
+	<p>
 </div>

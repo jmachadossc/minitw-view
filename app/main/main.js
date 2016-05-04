@@ -13,19 +13,36 @@ angular.module('minitw')
 
 .controller('MainCtrl',['$scope','$location','$http', '$rootScope', 'FollowService',
  function ($scope, $location, $http, $rootScope, FollowService) {
+    function getFollowingCb(response){
+
+    if(response){
+      $scope.following = response;
+      $scope.getTweets();
+    }else{
+      $scope.getTweets();
+      $scope.error = 'Not following anyone';
+    }
+  }
+
+  function refreshFollowers(){
+    FollowService.getFollowing($rootScope.user, getFollowingCb);
+  }
   if($rootScope.user){
-    var serverurl = 'http://localhost:7000/users/';
+    var serverurl = 'http://localhost:7000/users/' + $rootScope.user.email +'/tweets/' ;
     
     $scope.getTweets = function(){
       var config = {
         method: 'GET',
-        url: serverurl + $rootScope.user.email +'/tweets/'
+        url: serverurl + 'following'
       }
       $http(config)
       .success(function (response) {
         console.log(response , 'this should display tweets');
         if(response){
           $scope.tweets = response;
+          for (var i=0; i<response.length; i++){
+              response[i].date = new Date(response[i].date);
+          }
         }
       });
     };   
@@ -70,20 +87,7 @@ angular.module('minitw')
       }    
     }
 
-    function getFollowingCb(response){
 
-      if(response){
-        $scope.following = response;
-        $scope.getTweets();
-      }else{
-        $scope.getTweets();
-        $scope.error = 'Not following anyone';
-      }
-    }
-
-    function refreshFollowers(){
-      FollowService.getFollowing($rootScope.user, getFollowingCb);
-    }
     refreshFollowers();
       
   }else{
