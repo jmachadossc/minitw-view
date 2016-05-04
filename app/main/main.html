@@ -1,12 +1,16 @@
 <div class="main">
+	<div class="user-card col-md-3">
+		<h3 class="user-data">
+			<a href='#/profile' class='username'>{{user.name}}</a> 
+			<br/>
+			<small>{{user.email}}</small>
+		</h3>
+		<img src="app/avatars/avatar1.png" alt="User avatar" class="img-circle">
+	</div>
+	
+	<div class="clearfix"></div>
 
-	<h3 class='username'>
-		<a href='#/profile'>@{{user.name}}</a> 
-	</h3>
-	<h4>
-		{{user.email}}
-	</h4>
-	<div>
+	<div class='new-tweet'>
 		Tweet something: <input placeholder="max. 140 characters" ng-model='newTweet'>
 		<button ng-click="sendTweet()" ng-disabled="!newTweet || newTweet.length > 140">
 			Send!
@@ -14,16 +18,17 @@
 	</div>
 
 
-	<ol ng-if="tweets">
-		<div ng-repeat='tweet in tweets | orderBy:tweets.date:true'>
+	<div ng-if="tweets" class='feed'>
+		<div ng-repeat="tweet in tweets  | orderBy:'-date'" class='tweets'>
 			<p class="content">
-				{{tweet.content}} (by: <span class="tweet-submitter"> {{tweet.submitter}}</span>)
-				<button ng-click="deleteTweet(tweet)" class='delete-tweet-button' ng-if='user.email==tweet.submitter'>X</button>
+				{{tweet.content}} (by: <span class="submitter"> {{tweet.submitter}}</span>) 
+				<span class='date'> {{tweet.date}}</span>
+				<button ng-click="deleteTweet(tweet)" class='delete-tweet-button' ng-if='user.email==tweet.submitter'></button>
 
 			</p> 
 
 		</div>
-	</ol>
+	</div>
 
 </div>
 

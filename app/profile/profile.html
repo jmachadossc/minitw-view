@@ -1,31 +1,36 @@
 <div class='user-profile'>
 
-	<h3 class='username'>
-		{{user.name}} 
-	</h3>
-	<h4>
-		{{user.email}}
-	</h4>
+	<div class="user-card col-md-3">
+		<h3 class="user-data">
+			<a href='#/profile' class='username'>{{user.name}}</a> 
+			<br/>
+			<small>{{user.email}}</small>
+		</h3>
+		<img src="app/avatars/avatar1.png" alt="User avatar" class="img-circle">	
+	</div>
+
+	<div class="clearfix"></div>
 	
+	<div class="following-list">
+		<p>
+			Follow someone: <input placeholder="type in another user's email" ng-model='emailToFollow'>
+			<button ng-click="follow()" ng-disabled="!emailToFollow || emailToFollow.length < 5">
+				Follow!
+			</button>
+			{{error}}
+		</p>
 
-	<p>
-		Follow someone: <input placeholder="type in another user's email" ng-model='emailToFollow'>
-		<button ng-click="follow()" ng-disabled="!emailToFollow || emailToFollow.length < 5">
-			Follow!
-		</button>
-		{{error}}
-	</p>
+		<div ng-if="following">
+			<div ng-repeat='followed in following | orderBy:followed.name'>
+				<p class="content">
+					<button ng-click="unfollow(followed.followedEmail)" class='unfollow-button'>X</button> 
+					{{followed.followedEmail}} 
+					
+				</p> 
 
-	<ol ng-if="following">
-		<div ng-repeat='followed in following | orderBy:followed.name'>
-			<p class="content">
-				{{followed.followedEmail}} 
-				<button ng-click="unfollow(followed.followedEmail)" class='unfollow-button'>X</button> 
-			</p> 
-
+			</div>
 		</div>
-	</ol>
-
+	</div>
 
 
 

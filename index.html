@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<hmtl ng-app='minitw'>
+<hmtl ng-app='minitw' lamg="en">
 	<head>
 		<meta charset="utf-8">
 		<title>MiniTW</title>
@@ -10,15 +10,19 @@
 		<script src="app/main/main.js"></script>
 		<script src="app/register/register.js"></script>
 		<script src="app/profile/profile.js"></script>
+		<script src="app/services/followService.js"></script>
 		<link rel="stylesheet" href="app/app.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
 
 	</head>
-	<body class="index">
-		<!-- <ul class="menu">
-		<li><a href="#/login-v">Login</a></li>
-		<li><a href="#/main-v">Main</a></li>
-		</ul> -->
-		<div ng-view></div>
-
+	<body class="index container-fluid">
+		<div class='header row' >
+			<a href='/#/main' class="col-md-1 home-button"> Home </a>
+		</div>
+		<div class="clearfix"></div>
+		<div class='headerfix'></div>
+		<div ng-view class="row"></div>
 	</body>
 </html>
