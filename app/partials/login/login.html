@@ -1,0 +1,12 @@
+<form class="login col-md-3 col-md-push-4">
+	<div class="input-group">
+		<input type="email" ng-model="uemail" placeholder='email' class="form-control" required autofocus><br/>
+		<button type="submit" class="form-control btn-primary btn" ng-click="login()" ng-disabled="!uemail || uemail.length < 5">
+			Enter
+		</button><br/>
+		
+		<span class='form-control error' ng-if="error">{{error}}</span><br/>
+
+		<a href='#/register' class="text-info"> Not registered? </a>
+	</div>
+</form>

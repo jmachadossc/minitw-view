@@ -1,0 +1,13 @@
+<div class="tweet row"> 	
+	<img src="../../app/assets/images/avatars/avatar1.png" alt="User avatar" class="col-md-2 img-responsive img-circle">
+	<p class="content col-md-6">
+		<span class="username"> {{tweet.submitter}}:</span><br/>
+		<span class="tweet-content">{{tweet.content}}</span><br/>
+		<span class='date'> {{tweet.date | date:'d MMM'}}</span>				
+	</p> 
+	<p class="btn-group-vertical btn-group-xs col-md-1 col-md-push-3" role="group">
+		<button type="button" class="btn btn-danger glyphicon glyphicon-heart" ng-click="featureFunction(tweet)"></button>
+		<button type="button" class="btn btn-primary glyphicon glyphicon-retweet"></button>
+		<button type="button" ng-click="deleteTweetFunction(tweet)" class='btn glyphicon glyphicon-remove' ng-if='user.email==tweet.submitter'></button>
+	</p>
+</div>

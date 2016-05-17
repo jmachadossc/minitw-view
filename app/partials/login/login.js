@@ -3,10 +3,14 @@
 angular.module('minitw')
 
 
-.controller('LoginCtrl', function ($scope, $http, $location, $rootScope) {
-	var serverurl = 'http://localhost:7000/users/';
-	$scope.login = function(){
-		// console.log("$scope.uemail",$scope.uemail);
+.controller('LoginCtrl',['$scope', '$http', '$location', '$rootScope', function ($scope, $http, $location, $rootScope) {
+	function LoginCtrl(){
+		$scope.login = this.login;
+	  	$scope.uemail = 'lalo@hotmail.com';
+	}
+
+	LoginCtrl.prototype.login= function(){
+		var serverurl = 'http://localhost:7000/users/';
 		$http.get(serverurl + $scope.uemail)
 		.then(function (response) {
 			if(response.status==200){
@@ -18,6 +22,7 @@ angular.module('minitw')
     		console.error(response.data);
     	});
   	};
+  	new LoginCtrl();
   	
-});
+}]);
 

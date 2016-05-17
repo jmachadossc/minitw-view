@@ -6,23 +6,36 @@
 		<script src="bower_components/angular/angular.js"></script>
 		<script src="bower_components/angular-route/angular-route.js"></script>
 		<script src="app/app.js"></script>
-		<script src="app/login/login.js"></script>
-		<script src="app/main/main.js"></script>
-		<script src="app/register/register.js"></script>
-		<script src="app/profile/profile.js"></script>
+		<script src="app/partials/login/login.js"></script>
+		<script src="app/partials/main/main.js"></script>
+		<script src="app/partials/register/register.js"></script>
+		<script src="app/partials/profile/profile.js"></script>
+		<script src="app/partials/tweet/tweet.js"></script>
 		<script src="app/services/followService.js"></script>
-		<link rel="stylesheet" href="app/app.css">
+		<script src="app/services/tweetService.js"></script>
+		<link rel="stylesheet" href="app/assets/css/app.css">	
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
-
 	</head>
 	<body class="index container-fluid">
-		<div class='header row' >
-			<a href='/#/main' class="col-md-1 home-button"> Home </a>
+		<nav class="navbar navbar-default ">
+		    <div class="container-fluid">
+			    <div class="navbar-header">
+			      <a class="navbar-brand" href="/#/main">Home</a>
+			    </div>
+
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			      <form class="navbar-form navbar-right" role="search">
+			        <div class="form-group">
+			          <input type="text" class="form-control" placeholder="Search...">
+			        </div>
+			        <button type="submit" class="btn glyphicon glyphicon-search"></button>
+			      </form>
+			    </div>
+		    </div>
+		</nav>
+		<div class="container-fluid">
+			<div ng-view class="row"></div>
 		</div>
-		<div class="clearfix"></div>
-		<div class='headerfix'></div>
-		<div ng-view class="row"></div>
 	</body>
 </html>

@@ -1,0 +1,19 @@
+{
+	"indent": 2,
+	"white": true,
+	"node": true,
+	"undef": true,
+	"unused": true,
+	"-W058": true,
+	"-W014": true,
+	"expr": true,
+	"mocha": true,
+	"globals": {
+		"angular"   : false,
+		"jasmine"   : false,
+		"$"         : false,
+		"_"         : false,
+		"module"    : false,
+		"require"   : false
+	}
+}

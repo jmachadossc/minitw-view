@@ -6,7 +6,7 @@
 			<br/>
 			<small>{{user.email}}</small>
 		</h3>
-		<img src="app/avatars/avatar1.png" alt="User avatar" class="img-circle">	
+		<img src="app/assets/images/avatars/avatar1.png" alt="User avatar" class="img-circle">	
 	</div>
 
 	<div class="clearfix"></div>
@@ -23,7 +23,7 @@
 		<div ng-if="following">
 			<div ng-repeat='followed in following | orderBy:followed.name'>
 				<p class="content">
-					<button ng-click="unfollow(followed.followedEmail)" class='unfollow-button'>X</button> 
+					<button ng-click="unfollow(user,followed.followedEmail)" class='unfollow-button'>X</button> 
 					{{followed.followedEmail}} 
 					
 				</p> 

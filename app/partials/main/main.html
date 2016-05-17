@@ -1,0 +1,52 @@
+<div class="main container-fluid">
+	<div class="row">	
+		<div class="user-card col-md-3">
+			<h3 class="user-data">
+				<a href='#/profile' class='username'>{{user.name}}</a> 
+				<br/>
+				<small>{{user.email}}</small>
+			</h3>
+			<img src="../../app/assets/images/avatars/avatar1.png" alt="My avatar" class="img-circle">
+		</div>
+		
+	</div>
+<div class="row">	
+	<div class="col-md-6">
+		<form class='new-tweet row' ng-submit="sendTweet()">
+		    <div class="input-group col-lg-12">
+		      <span class="input-group-btn">
+		        <button class="form-control glyphicon glyphicon-camera"></button>
+		      </span>
+		      <input type="text" class="form-control" placeholder="max. 140 characters" ng-model='newTweet'>
+		    </div>
+			<br/>
+			<button type="submit" class="btn btn-primary col-lg-2 col-lg-push-10" ng-disabled="!newTweet || newTweet.length > 140">
+				Send!
+			</button>
+		</form>
+		<div ng-if="tweets" class='feed row'>
+			<div my-tweet-directive my-user="user" my-tweet="featuredTweet" class="favourite-tweet"></div>
+			<div ng-repeat="tweet in tweets  | orderBy:'-date'">
+				<div my-tweet-directive my-user="user" my-tweet="tweet" feature-function="changeFavourite(tweet)" delete-tweet-function="deleteTweet(tweet)"></div>
+			</div>
+		</div>
+	</div>	
+		<div ng-if="following" class="following-list col-md-5">
+		<span>You're following:</span>
+		<div ng-repeat='followed in following | orderBy:followed.name'>
+			<p class="content">
+				{{followed.followedEmail}}
+				<button type="button" ng-click="unfollow(followed.followedEmail)" class='close' aria-label="Close"><span>&times;</span></button>  
+				
+			</p> 
+
+		</div>
+	</div>	
+	</div>
+
+		
+
+
+</div>
+
+<!--      lalo@hotmail.com     -->

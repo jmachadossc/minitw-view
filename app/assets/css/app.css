@@ -1,0 +1,196 @@
+body.index.container-fluid{
+	padding: 0em;
+}
+body.index .container-fluid > .row{
+	padding-left: 1em;
+	padding-right: 1em;
+}
+.header{
+	background-color: lightblue;
+	border-width: 1px;
+	border-color: grey;
+	border-style: solid;
+	height: 2.5em;
+	z-index: 99999;
+}	
+.home-button{
+	height: 100%;
+	width: 100%;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	background-color: white;
+	color: black ;
+	float:left;
+}
+.main .feed .tweet .btn-group-xs>.btn, .btn-xs{
+	padding:0.25em;
+}
+.headerfix{
+	height: 1em;
+}
+
+.search-bar{
+	background-color: white;
+	padding: 0.5em;
+	border-width: 1px;
+	border-color: grey;
+	border-style: solid;	
+}
+.index .user-card .username {
+	font-weight: bolder;	
+	color: #296294;
+}
+
+.following-list{
+	border-radius: 6px;
+	font-weight: bolder;
+	color: #296294;
+	padding: 1em;
+	background-color: lightblue;
+	border-style: solid;
+	border-width: 1px;
+	border-color: grey;
+	overflow: hidden;
+}
+
+.main .following-list{
+	float: right;		
+}
+
+.following-list .content{
+	color: black;
+	font-weight: bold;
+	margin-top: 1em;
+	padding: 1em;
+	background-color: white;
+	border-radius: 20px;	
+}
+
+.user-profile .following-list{
+	margin-top: 1em;
+}
+
+.index a {
+	color:black;
+}
+.index {
+	background-image: url('../images/backgrounds/nature.jpg');
+	background-color: #7CBACF;
+	margin-left: 1em;
+	margin-right: 1em;
+
+}
+
+
+.user-card{
+	background-color: lightblue;
+	padding:0.5em;
+	width: 100%;
+	border-style: solid;
+	border-width: 1px;
+	border-color: grey;
+	border-radius: 6px;
+	margin-bottom: 1em;
+}
+.user-card img{
+	float:right;
+}
+
+.user-data{
+	float:left;
+}
+
+.clearfix {
+  overflow: auto;
+  clear: both;
+}
+
+.error{
+	color: red;
+}
+
+.login{
+	background-color: white;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 8px;
+	padding: 1%;
+	border-color: grey;	
+	position: absolute;
+}
+
+.login .error{
+	font-weight: bold;	
+}
+
+.register{
+	padding: 1em;
+	background-color: beige;
+	border-style: solid;
+	border-color: grey;
+	border-width: 1px;
+}
+
+.delete-tweet-button{
+	height:1em;
+	width:1em;
+	background-color: black;
+	font-weight: bold;
+}
+
+.feed{
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	background-color: lightblue;
+	border-style: solid;
+	border-width: 1px;
+	border-color: grey;
+	margin-left:1em;
+}
+
+.feed .tweet{
+	margin:1em;
+	padding: 0.5em;
+	background-color: beige;
+	overflow: hidden;
+}
+
+.new-tweet{
+	border-top-right-radius: 6px;
+	border-top-left-radius: 6px;
+	border-color: grey;	
+	border-style: solid;
+	border-width: 1px;
+	background-color: white;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	padding-right: 1em;
+	padding-left: 1em;
+}
+
+.new-tweet input{
+	padding:0.25em;
+	background-color: #E0F7FF;
+}
+
+.tweet .date{
+	color:grey;
+}
+
+.favourite-tweet{
+	border-style: solid;
+	border-width: 2px;
+	border-color: blue;
+}
+.tweet .content .username{
+	color: grey;
+	font-weight: bold;
+}
+
+.tweet .content .tweet-content{
+	overflow: auto;
+}
